@@ -1,6 +1,8 @@
 # SimpleiOSPlayer
 View the demo [here!](https://youtu.be/KazDMpwsr-4)
 
+Looking for an **Android** app that does the same? Check out [ExoPlayer Creator](https://github.com/A-Star100/ExoPlayerCreator), also by me.
+
 ## Get Started
 Due to Apple restrictions, I can't currently build IPAs (iOS App Packages) right now that are installable on a user's device, and even if I could I would have to pay Apple $100 a year and join the Developer program. Android is so much more open. However, I can guide you on compiling for yourself.
 
