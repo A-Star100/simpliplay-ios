@@ -10,7 +10,7 @@ After creating an Apple account (if you haven't) XCode is the next step. It is *
 ### Open XCode and import the source code
 Once XCode is installed (and all of the tools that come with it, like the iOS Simulator), you'll need to import the source code. You can use `git clone`, download a ZIP of the source code from GitHub, or use XCode's **built-in** repository cloning functionality by entering the URL and cloning the repository. If you used XCode's built in repository cloning, skip the next step.
 
-#### If you used git clone or GitHub
+#### If you used `git clone` or GitHub
 Simply click *Open New Project* and click on the folder where the source code is. You should now see that the project has loaded. From here, you can modify the source code and add new features. Once you've added features, you can do a pull request (which would be appreciated since I'm just starting to develop iOS apps, but you don't have to).
 
 ### Distributing the app
