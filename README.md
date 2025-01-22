@@ -1,5 +1,5 @@
 # SimpleiOSPlayer
-https://www.dropbox.com/scl/fi/fzl3nn65k6k6mi4ri6q0g/SimpleiOSPlayerDemo.mp4?rlkey=aj19e28o604panyd4z53op1k5&st=n1wfmnnw&raw=1
+https://ucbd973dab73ae62164e98ebc590.dl.dropboxusercontent.com/cd/0/inline/CirA_MtQEIrHTEktBARkaq1-CmZH3J9p8yjjUTtIaB-uJgCSxwpILZ6mPA-qy5SHKxYnEHgnJL6jnnibpmEt8gwn1YM0BFL_eH9eQIMsBYQQua1tfmRNKFBGarLsm0CzgusrDB0mMsFdpsiuXZutJN2D/file#
 
 ## Get Started
 Due to Apple restrictions, I can't currently build IPAs (iOS App Packages) right now that are installable on a user's device, and even if I could I would have to pay Apple $100 a year and join the Developer program. Android is so much more open. However, I can guide you on compiling for yourself.
