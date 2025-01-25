@@ -1,4 +1,6 @@
-# SimpleiOSPlayer
+# simpliplay-ios
+*(formerly known as SimpleiOSPlayer)*
+
 View the demo [here!](https://youtu.be/KazDMpwsr-4)
 
 Looking for an **Android** app that does the same? Check out [ExoPlayer Creator](https://github.com/A-Star100/ExoPlayerCreator), also by me.
