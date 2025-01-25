@@ -140,7 +140,7 @@ struct ContentView: View {
                         .edgesIgnoringSafeArea(.all)
                 }
             }
-            .navigationBarTitle("SimpleiOSPlayer", displayMode: .inline)
+            .navigationBarTitle("SimpliPlay", displayMode: .inline)
         }
     }
 
