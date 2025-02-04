@@ -6,7 +6,7 @@ View the demo [here!](https://youtu.be/KazDMpwsr-4)
 Looking for the **Android** version? Check out [simpliplay-android](https://github.com/A-Star100/simpliplay-android)!
 
 ## Get Started
-Due to Apple restrictions, I can't currently build IPAs (iOS App Packages) right now that are installable on a user's device, and even if I could I would have to pay Apple $100 a year and join the Developer program. Android is so much more open. However, I can guide you on compiling for yourself.
+Due to Apple's restrictions, I can't currently build IPAs (iOS App Packages) right now that are installable on a user's device, and even if I could I would have to pay Apple $100 a year and join the Developer program. Android is so much more open. However, I can guide you on compiling for yourself.
 
 ### Install XCode
 After creating an Apple account (if you haven't) XCode is the next step. It is ***required*** for compiling apps, no questions asked. On your Mac (or if you're emulating on Windows, your emulator), open the **Mac App Store** and install XCode on your computer. This can take a while, and you'll need at least **40 GB** of free space.
