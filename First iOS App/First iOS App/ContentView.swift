@@ -11,9 +11,9 @@ struct ContentView: View {
     @State private var showWebView = false
     @State private var urlToOpen: String?
     @State private var player: AVPlayer?
-
     @State private var isPickingVideo = false
     @State private var isPickingAudio = false
+    @StateObject private var observer = PlayerObserver()
 
     var body: some View {
         NavigationView {
@@ -25,7 +25,6 @@ struct ContentView: View {
                             .fontWeight(.bold)
                             .padding(.top)
 
-                        // Video URL Control
                         VStack(spacing: 10) {
                             TextField("Enter Media URL", text: $videoURL)
                                 .textFieldStyle(RoundedBorderTextFieldStyle())
@@ -44,11 +43,10 @@ struct ContentView: View {
                             }
                         }
 
-                        // File Picker Section
                         VStack(spacing: 12) {
                             HStack {
-                                Button("Choose Video File", action: { isPickingVideo = true })
-                                Button("Choose Audio File", action: { isPickingAudio = true })
+                                Button("Choose Video File") { isPickingVideo = true }
+                                Button("Choose Audio File") { isPickingAudio = true }
                             }
 
                             if let video = videoFileURL {
@@ -80,13 +78,12 @@ struct ContentView: View {
                             showWebView = true
                             isMenuOpen = false
                         }
-                        
+
                         Button("About the Creator") {
                             urlToOpen = "https://a-star100.github.io"
                             showWebView = true
                             isMenuOpen = false
                         }
-                        
 
                         Button("Close Menu") {
                             isMenuOpen = false
@@ -120,25 +117,30 @@ struct ContentView: View {
         }
     }
 
-    // MARK: - Video Playback Helpers
+    // MARK: - Playback
 
     func playVideo(urlString: String) {
-        if let url = URL(string: urlString) {
-            player = AVPlayer(url: url)
-            let controller = AVPlayerViewController()
-            controller.player = player
-            controller.modalPresentationStyle = .fullScreen
-            present(controller)
-        }
+        guard let url = URL(string: urlString) else { return }
+        let newPlayer = AVPlayer(url: url)
+        observer.attach(to: newPlayer)
+        player = newPlayer
+        presentPlayer()
     }
 
     func playLocalVideo(fileURL: URL) {
-        player = AVPlayer(url: fileURL)
+        let newPlayer = AVPlayer(url: fileURL)
+        observer.attach(to: newPlayer)
+        player = newPlayer
+        presentPlayer()
+    }
+
+    func presentPlayer() {
+        guard let player = player else { return }
         let controller = AVPlayerViewController()
         controller.player = player
         controller.modalPresentationStyle = .fullScreen
         present(controller)
-        player?.play()
+        player.play()
     }
 
     func present(_ viewController: UIViewController) {
@@ -149,7 +151,34 @@ struct ContentView: View {
     }
 }
 
-// MARK: - Primary Button Style
+// MARK: - Observer to Keep Screen On
+
+class PlayerObserver: NSObject, ObservableObject {
+    private var observation: NSKeyValueObservation?
+    private var player: AVPlayer?
+
+    func attach(to newPlayer: AVPlayer) {
+        self.player = newPlayer
+        observation?.invalidate()
+
+        observation = newPlayer.observe(\.timeControlStatus, options: [.initial, .new]) { player, _ in
+            DispatchQueue.main.async {
+                UIApplication.shared.isIdleTimerDisabled = player.timeControlStatus == .playing
+            }
+        }
+
+        NotificationCenter.default.addObserver(forName: .AVPlayerItemDidPlayToEndTime, object: newPlayer.currentItem, queue: .main) { _ in
+            UIApplication.shared.isIdleTimerDisabled = false
+        }
+    }
+
+    deinit {
+        observation?.invalidate()
+        UIApplication.shared.isIdleTimerDisabled = false
+    }
+}
+
+// MARK: - Styles and Views
 
 struct PrimaryButtonStyle: ButtonStyle {
     func makeBody(configuration: Configuration) -> some View {
@@ -162,8 +191,6 @@ struct PrimaryButtonStyle: ButtonStyle {
             .padding(.horizontal)
     }
 }
-
-// MARK: - Safari View
 
 struct SafariView: View {
     var url: URL
@@ -180,8 +207,6 @@ struct SafariViewController: UIViewControllerRepresentable {
     }
     func updateUIViewController(_ uiViewController: SFSafariViewController, context: Context) {}
 }
-
-// MARK: - Document Picker
 
 struct DocumentPicker: UIViewControllerRepresentable {
     var fileType: UTType
@@ -212,4 +237,3 @@ struct DocumentPicker: UIViewControllerRepresentable {
         }
     }
 }
-
