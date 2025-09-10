@@ -1,7 +1,12 @@
 import SwiftUI
 import AVKit
-import SafariServices
 import UniformTypeIdentifiers
+
+#if targetEnvironment(macCatalyst)
+import AppKit
+#else
+import SafariServices
+#endif
 
 struct ContentView: View {
     @State private var videoURL: String = ""
@@ -31,30 +36,23 @@ struct ContentView: View {
                                 .padding(.horizontal)
 
                             HStack {
-                                Button("Play Media") {
-                                    playVideo(urlString: videoURL)
-                                }
-                                .buttonStyle(PrimaryButtonStyle())
-
-                                Button("Clear") {
-                                    videoURL = ""
-                                }
-                                .foregroundColor(.red)
+                                Button("Play Media") { playVideo(urlString: videoURL) }
+                                    .buttonStyle(PrimaryButtonStyle())
+                                Button("Clear") { videoURL = "" }
+                                    .foregroundColor(.red)
                             }
                         }
 
                         VStack(spacing: 12) {
                             HStack {
-                                Button("Choose Video File") { isPickingVideo = true }
-                                Button("Choose Audio File") { isPickingAudio = true }
+                                Button("Choose Video File") { pickVideoFile() }
+                                Button("Choose Audio File") { pickAudioFile() }
                             }
 
                             if let video = videoFileURL {
                                 Text("🎞️ \(video.lastPathComponent)")
-                                Button("Play Selected Video") {
-                                    playLocalVideo(fileURL: video)
-                                }
-                                .buttonStyle(PrimaryButtonStyle())
+                                Button("Play Selected Video") { playLocalVideo(fileURL: video) }
+                                    .buttonStyle(PrimaryButtonStyle())
                             }
 
                             if let audio = audioFileURL {
@@ -63,31 +61,17 @@ struct ContentView: View {
                         }
                         .padding(.horizontal)
 
-                        Button("Open Menu") {
-                            isMenuOpen.toggle()
-                        }
-                        .buttonStyle(PrimaryButtonStyle())
+                        Button("Open Menu") { isMenuOpen.toggle() }
+                            .buttonStyle(PrimaryButtonStyle())
                     }
                     .padding()
                 }
 
                 if isMenuOpen {
                     VStack(alignment: .leading, spacing: 20) {
-                        Button("Official Website") {
-                            urlToOpen = "https://simpliplay.netlify.app"
-                            showWebView = true
-                            isMenuOpen = false
-                        }
-
-                        Button("About the Creator") {
-                            urlToOpen = "https://a-star100.github.io"
-                            showWebView = true
-                            isMenuOpen = false
-                        }
-
-                        Button("Close Menu") {
-                            isMenuOpen = false
-                        }
+                        Button("Official Website") { openURL("https://simpliplay.netlify.app") }
+                        Button("About the Creator") { openURL("https://anirudhsevugan.me") }
+                        Button("Close Menu") { isMenuOpen = false }
                     }
                     .padding()
                     .frame(maxWidth: 250, alignment: .leading)
@@ -99,26 +83,10 @@ struct ContentView: View {
                 }
             }
             .navigationBarHidden(true)
-            .sheet(isPresented: $showWebView) {
-                if let urlString = urlToOpen, let url = URL(string: urlString) {
-                    SafariView(url: url)
-                }
-            }
-            .sheet(isPresented: $isPickingVideo) {
-                DocumentPicker(fileType: .movie) { url in
-                    videoFileURL = url
-                }
-            }
-            .sheet(isPresented: $isPickingAudio) {
-                DocumentPicker(fileType: .audio) { url in
-                    audioFileURL = url
-                }
-            }
         }
     }
 
     // MARK: - Playback
-
     func playVideo(urlString: String) {
         guard let url = URL(string: urlString) else { return }
         let newPlayer = AVPlayer(url: url)
@@ -136,23 +104,66 @@ struct ContentView: View {
 
     func presentPlayer() {
         guard let player = player else { return }
+#if targetEnvironment(macCatalyst)
+        let controller = AVPlayerViewController()
+        controller.player = player
+        controller.view.frame = NSScreen.main?.frame ?? .zero
+        let window = NSWindow(contentViewController: controller)
+        let windowController = NSWindowController(window: window)
+        windowController.showWindow(nil)
+#else
         let controller = AVPlayerViewController()
         controller.player = player
         controller.modalPresentationStyle = .fullScreen
-        present(controller)
+        if let rootVC = UIApplication.shared.connectedScenes
+            .compactMap({ ($0 as? UIWindowScene)?.windows.first?.rootViewController }).first {
+            rootVC.present(controller, animated: true)
+        }
+#endif
         player.play()
     }
 
-    func present(_ viewController: UIViewController) {
-        if let rootVC = UIApplication.shared.connectedScenes
-            .compactMap({ ($0 as? UIWindowScene)?.windows.first?.rootViewController }).first {
-            rootVC.present(viewController, animated: true)
+    // MARK: - File Picking
+    func pickVideoFile() {
+#if targetEnvironment(macCatalyst)
+        let panel = NSOpenPanel()
+        panel.allowedContentTypes = [.movie]
+        panel.allowsMultipleSelection = false
+        if panel.runModal() == .OK {
+            videoFileURL = panel.url
         }
+#else
+        isPickingVideo = true
+#endif
+    }
+
+    func pickAudioFile() {
+#if targetEnvironment(macCatalyst)
+        let panel = NSOpenPanel()
+        panel.allowedContentTypes = [.audio]
+        panel.allowsMultipleSelection = false
+        if panel.runModal() == .OK {
+            audioFileURL = panel.url
+        }
+#else
+        isPickingAudio = true
+#endif
+    }
+
+    // MARK: - Open URL
+    func openURL(_ urlString: String) {
+#if targetEnvironment(macCatalyst)
+        if let url = URL(string: urlString) {
+            NSWorkspace.shared.open(url)
+        }
+#else
+        urlToOpen = urlString
+        showWebView = true
+#endif
     }
 }
 
-// MARK: - Observer to Keep Screen On
-
+// MARK: - Observer
 class PlayerObserver: NSObject, ObservableObject {
     private var observation: NSKeyValueObservation?
     private var player: AVPlayer?
@@ -163,23 +174,28 @@ class PlayerObserver: NSObject, ObservableObject {
 
         observation = newPlayer.observe(\.timeControlStatus, options: [.initial, .new]) { player, _ in
             DispatchQueue.main.async {
+#if !targetEnvironment(macCatalyst)
                 UIApplication.shared.isIdleTimerDisabled = player.timeControlStatus == .playing
+#endif
             }
         }
 
         NotificationCenter.default.addObserver(forName: .AVPlayerItemDidPlayToEndTime, object: newPlayer.currentItem, queue: .main) { _ in
+#if !targetEnvironment(macCatalyst)
             UIApplication.shared.isIdleTimerDisabled = false
+#endif
         }
     }
 
     deinit {
         observation?.invalidate()
+#if !targetEnvironment(macCatalyst)
         UIApplication.shared.isIdleTimerDisabled = false
+#endif
     }
 }
 
-// MARK: - Styles and Views
-
+// MARK: - Button Style
 struct PrimaryButtonStyle: ButtonStyle {
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
@@ -192,48 +208,3 @@ struct PrimaryButtonStyle: ButtonStyle {
     }
 }
 
-struct SafariView: View {
-    var url: URL
-    var body: some View {
-        SafariViewController(url: url)
-            .edgesIgnoringSafeArea(.all)
-    }
-}
-
-struct SafariViewController: UIViewControllerRepresentable {
-    let url: URL
-    func makeUIViewController(context: Context) -> SFSafariViewController {
-        SFSafariViewController(url: url)
-    }
-    func updateUIViewController(_ uiViewController: SFSafariViewController, context: Context) {}
-}
-
-struct DocumentPicker: UIViewControllerRepresentable {
-    var fileType: UTType
-    var onPick: (URL) -> Void
-
-    func makeCoordinator() -> Coordinator {
-        Coordinator(onPick: onPick)
-    }
-
-    func makeUIViewController(context: Context) -> UIDocumentPickerViewController {
-        let picker = UIDocumentPickerViewController(forOpeningContentTypes: [fileType], asCopy: true)
-        picker.delegate = context.coordinator
-        return picker
-    }
-
-    func updateUIViewController(_ uiViewController: UIDocumentPickerViewController, context: Context) {}
-
-    class Coordinator: NSObject, UIDocumentPickerDelegate {
-        let onPick: (URL) -> Void
-        init(onPick: @escaping (URL) -> Void) {
-            self.onPick = onPick
-        }
-
-        func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentsAt urls: [URL]) {
-            if let url = urls.first {
-                onPick(url)
-            }
-        }
-    }
-}
