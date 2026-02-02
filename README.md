@@ -8,7 +8,12 @@ View the demo [here!](https://youtu.be/KazDMpwsr-4)
 
 Looking for the **Android** version? Check out [simpliplay-android](https://github.com/A-Star100/simpliplay-android)!
 
-## Get Started
+## Download the Release IPAs (requires Jailbreak with AppSync Unified installed!!!)
+First off, you obviously have to get the IPAs on the device you're using for this. You can AirDrop it or use a file hosting service; those are just a few ideas. And **make sure** you have the AppSync Unified `.deb` installed (you can use Filza File Manager from Cydia and Zebra to install the .deb if it isn't available in the repos you added).
+
+Then use Filza File Manager (available in Cydia and Zebra) to install the IPA. If it fails, hold you finger down where the IPA is. If a bubble appears next to it that can be checked, then go ahead to the Scripts menu. Then press Resign with ldid. If this fails, the IPA won't be installable without modification (you can simply rename the extension to a `.zip` and then open the ZIP. The binary will be in the Payload folder).
+
+## Compile Yourself
 Due to Apple's restrictions, I can't currently build IPAs (iOS App Packages) right now that are installable on a user's device, and even if I could I would have to pay Apple $100 a year and join the Developer program. Android is so much more open. However, I can guide you on compiling for yourself.
 
 ### Install XCode
