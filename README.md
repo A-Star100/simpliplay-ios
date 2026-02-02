@@ -1,7 +1,7 @@
 # simpliplay-ios (iOS 13+)
 *(formerly known as SimpleiOSPlayer)*
 
-**If you want a version compatible with versions of iOS below iOS 13, use the legacy version!**
+**If you want a version compatible with versions of iOS below iOS 13, use the [legacy](https://github.com/A-Star100/simpliplay-ios/tree/legacy) version!**
 
 
 View the demo [here!](https://youtu.be/KazDMpwsr-4)
