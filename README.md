@@ -9,7 +9,7 @@ View the demo [here!](https://youtu.be/KazDMpwsr-4)
 Looking for the **Android** version? Check out [simpliplay-android](https://github.com/A-Star100/simpliplay-android)!
 
 ## Download the Release IPAs (requires Jailbreak with AppSync Unified installed!!!)
-First off, you obviously have to get the IPAs on the device you're using for this. You can AirDrop it or use a file hosting service; those are just a few ideas. To install AppSync Unified from the `.deb`, use Filza File Manager from Cydia and Zebra to install the .deb if it isn't available in the repos you added.
+First off, you obviously have to get the [IPA](https://github.com/A-Star100/simpliplay-ios/releases/tag/beta-0.3.1) on the device you're using for this. You can AirDrop it or use a file hosting service; those are just a few ideas. To install AppSync Unified from the `.deb`, use Filza File Manager from Cydia and Zebra to install the .deb if it isn't available in the repos you added.
 
 Then use Filza File Manager (available in Cydia and Zebra) to install the IPA. If it fails, hold you finger down where the IPA is. If a bubble appears next to it that can be checked, then go ahead to the Scripts menu. Then press Resign with ldid. If this fails, the IPA won't be installable without modification (you can simply rename the extension to a `.zip` and then open the ZIP. The binary will be in the Payload folder).
 
