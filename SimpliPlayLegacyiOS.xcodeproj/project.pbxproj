@@ -1,0 +1,456 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F0A3C3722F303D4E00E6C6C4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0A3C3712F303D4E00E6C6C4 /* UIKit.framework */; };
+		F0A3C3742F303D4E00E6C6C4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0A3C3732F303D4E00E6C6C4 /* Foundation.framework */; };
+		F0A3C3762F303D4E00E6C6C4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0A3C3752F303D4E00E6C6C4 /* CoreGraphics.framework */; };
+		F0A3C37C2F303D4E00E6C6C4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F0A3C37A2F303D4E00E6C6C4 /* InfoPlist.strings */; };
+		F0A3C37E2F303D4E00E6C6C4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F0A3C37D2F303D4E00E6C6C4 /* main.m */; };
+		F0A3C3822F303D4E00E6C6C4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F0A3C3812F303D4E00E6C6C4 /* AppDelegate.m */; };
+		F0A3C3852F303D4E00E6C6C4 /* Main_iPhone. in Resources */ = {isa = PBXBuildFile; fileRef = F0A3C3832F303D4E00E6C6C4 /* Main_iPhone. */; };
+		F0A3C3882F303D4E00E6C6C4 /* Main_iPad. in Resources */ = {isa = PBXBuildFile; fileRef = F0A3C3862F303D4E00E6C6C4 /* Main_iPad. */; };
+		F0A3C38B2F303D4E00E6C6C4 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0A3C38A2F303D4E00E6C6C4 /* ViewController.m */; };
+		F0A3C3932F303D4E00E6C6C4 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0A3C3922F303D4E00E6C6C4 /* SenTestingKit.framework */; };
+		F0A3C3942F303D4E00E6C6C4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0A3C3712F303D4E00E6C6C4 /* UIKit.framework */; };
+		F0A3C3952F303D4E00E6C6C4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0A3C3732F303D4E00E6C6C4 /* Foundation.framework */; };
+		F0A3C39D2F303D4E00E6C6C4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F0A3C39B2F303D4E00E6C6C4 /* InfoPlist.strings */; };
+		F0A3C3A02F303D4E00E6C6C4 /* SimpliPlayLegacyiOSTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F0A3C39F2F303D4E00E6C6C4 /* SimpliPlayLegacyiOSTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F0A3C3962F303D4E00E6C6C4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F0A3C3642F303D4E00E6C6C4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F0A3C36C2F303D4E00E6C6C4;
+			remoteInfo = SimpliPlayLegacyiOS;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		F0A3C36D2F303D4E00E6C6C4 /* SimpliPlayLegacyiOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpliPlayLegacyiOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F0A3C3712F303D4E00E6C6C4 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		F0A3C3732F303D4E00E6C6C4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		F0A3C3752F303D4E00E6C6C4 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		F0A3C3792F303D4E00E6C6C4 /* SimpliPlayLegacyiOS-Info.plist */ = {isa = PBXFileReference; path = "SimpliPlayLegacyiOS-Info.plist"; sourceTree = "<group>"; };
+		F0A3C37B2F303D4E00E6C6C4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		F0A3C37D2F303D4E00E6C6C4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		F0A3C37F2F303D4E00E6C6C4 /* SimpliPlayLegacyiOS-Prefix.pch */ = {isa = PBXFileReference; path = "SimpliPlayLegacyiOS-Prefix.pch"; sourceTree = "<group>"; };
+		F0A3C3802F303D4E00E6C6C4 /* AppDelegate.h */ = {isa = PBXFileReference; path = AppDelegate.h; sourceTree = "<group>"; };
+		F0A3C3812F303D4E00E6C6C4 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		F0A3C3892F303D4E00E6C6C4 /* ViewController.h */ = {isa = PBXFileReference; path = ViewController.h; sourceTree = "<group>"; };
+		F0A3C38A2F303D4E00E6C6C4 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		F0A3C3912F303D4E00E6C6C4 /* SimpliPlayLegacyiOSTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SimpliPlayLegacyiOSTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F0A3C3922F303D4E00E6C6C4 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		F0A3C39A2F303D4E00E6C6C4 /* SimpliPlayLegacyiOSTests-Info.plist */ = {isa = PBXFileReference; path = "SimpliPlayLegacyiOSTests-Info.plist"; sourceTree = "<group>"; };
+		F0A3C39C2F303D4E00E6C6C4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		F0A3C39E2F303D4E00E6C6C4 /* SimpliPlayLegacyiOSTests.h */ = {isa = PBXFileReference; path = SimpliPlayLegacyiOSTests.h; sourceTree = "<group>"; };
+		F0A3C39F2F303D4E00E6C6C4 /* SimpliPlayLegacyiOSTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SimpliPlayLegacyiOSTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F0A3C36A2F303D4E00E6C6C4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F0A3C3722F303D4E00E6C6C4 /* UIKit.framework in Frameworks */,
+				F0A3C3742F303D4E00E6C6C4 /* Foundation.framework in Frameworks */,
+				F0A3C3762F303D4E00E6C6C4 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F0A3C38D2F303D4E00E6C6C4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F0A3C3932F303D4E00E6C6C4 /* SenTestingKit.framework in Frameworks */,
+				F0A3C3942F303D4E00E6C6C4 /* UIKit.framework in Frameworks */,
+				F0A3C3952F303D4E00E6C6C4 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F0A3C3622F303D4E00E6C6C4 = {
+			isa = PBXGroup;
+			children = (
+				F0A3C3772F303D4E00E6C6C4 /* SimpliPlayLegacyiOS */,
+				F0A3C3982F303D4E00E6C6C4 /* SimpliPlayLegacyiOSTests */,
+				F0A3C3702F303D4E00E6C6C4 /* Frameworks */,
+				F0A3C36E2F303D4E00E6C6C4 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F0A3C36E2F303D4E00E6C6C4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F0A3C36D2F303D4E00E6C6C4 /* SimpliPlayLegacyiOS.app */,
+				F0A3C3912F303D4E00E6C6C4 /* SimpliPlayLegacyiOSTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F0A3C3702F303D4E00E6C6C4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F0A3C3712F303D4E00E6C6C4 /* UIKit.framework */,
+				F0A3C3732F303D4E00E6C6C4 /* Foundation.framework */,
+				F0A3C3752F303D4E00E6C6C4 /* CoreGraphics.framework */,
+				F0A3C3922F303D4E00E6C6C4 /* SenTestingKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F0A3C3772F303D4E00E6C6C4 /* SimpliPlayLegacyiOS */ = {
+			isa = PBXGroup;
+			children = (
+				F0A3C3802F303D4E00E6C6C4 /* AppDelegate.h */,
+				F0A3C3812F303D4E00E6C6C4 /* AppDelegate.m */,
+				F0A3C3832F303D4E00E6C6C4 /* Main_iPhone. */,
+				F0A3C3862F303D4E00E6C6C4 /* Main_iPad. */,
+				F0A3C3892F303D4E00E6C6C4 /* ViewController.h */,
+				F0A3C38A2F303D4E00E6C6C4 /* ViewController.m */,
+				F0A3C3782F303D4E00E6C6C4 /* Supporting Files */,
+			);
+			path = SimpliPlayLegacyiOS;
+			sourceTree = "<group>";
+		};
+		F0A3C3782F303D4E00E6C6C4 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F0A3C3792F303D4E00E6C6C4 /* SimpliPlayLegacyiOS-Info.plist */,
+				F0A3C37A2F303D4E00E6C6C4 /* InfoPlist.strings */,
+				F0A3C37D2F303D4E00E6C6C4 /* main.m */,
+				F0A3C37F2F303D4E00E6C6C4 /* SimpliPlayLegacyiOS-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F0A3C3982F303D4E00E6C6C4 /* SimpliPlayLegacyiOSTests */ = {
+			isa = PBXGroup;
+			children = (
+				F0A3C39E2F303D4E00E6C6C4 /* SimpliPlayLegacyiOSTests.h */,
+				F0A3C39F2F303D4E00E6C6C4 /* SimpliPlayLegacyiOSTests.m */,
+				F0A3C3992F303D4E00E6C6C4 /* Supporting Files */,
+			);
+			path = SimpliPlayLegacyiOSTests;
+			sourceTree = "<group>";
+		};
+		F0A3C3992F303D4E00E6C6C4 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F0A3C39A2F303D4E00E6C6C4 /* SimpliPlayLegacyiOSTests-Info.plist */,
+				F0A3C39B2F303D4E00E6C6C4 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F0A3C36C2F303D4E00E6C6C4 /* SimpliPlayLegacyiOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F0A3C3A32F303D4E00E6C6C4 /* Build configuration list for PBXNativeTarget "SimpliPlayLegacyiOS" */;
+			buildPhases = (
+				F0A3C3692F303D4E00E6C6C4 /* Sources */,
+				F0A3C36A2F303D4E00E6C6C4 /* Frameworks */,
+				F0A3C36B2F303D4E00E6C6C4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SimpliPlayLegacyiOS;
+			productName = SimpliPlayLegacyiOS;
+			productReference = F0A3C36D2F303D4E00E6C6C4 /* SimpliPlayLegacyiOS.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F0A3C3902F303D4E00E6C6C4 /* SimpliPlayLegacyiOSTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F0A3C3A62F303D4E00E6C6C4 /* Build configuration list for PBXNativeTarget "SimpliPlayLegacyiOSTests" */;
+			buildPhases = (
+				F0A3C38C2F303D4E00E6C6C4 /* Sources */,
+				F0A3C38D2F303D4E00E6C6C4 /* Frameworks */,
+				F0A3C38E2F303D4E00E6C6C4 /* Resources */,
+				F0A3C38F2F303D4E00E6C6C4 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F0A3C3972F303D4E00E6C6C4 /* PBXTargetDependency */,
+			);
+			name = SimpliPlayLegacyiOSTests;
+			productName = SimpliPlayLegacyiOSTests;
+			productReference = F0A3C3912F303D4E00E6C6C4 /* SimpliPlayLegacyiOSTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F0A3C3642F303D4E00E6C6C4 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+			};
+			buildConfigurationList = F0A3C3672F303D4E00E6C6C4 /* Build configuration list for PBXProject "SimpliPlayLegacyiOS" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = F0A3C3622F303D4E00E6C6C4;
+			productRefGroup = F0A3C36E2F303D4E00E6C6C4 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F0A3C36C2F303D4E00E6C6C4 /* SimpliPlayLegacyiOS */,
+				F0A3C3902F303D4E00E6C6C4 /* SimpliPlayLegacyiOSTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F0A3C36B2F303D4E00E6C6C4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F0A3C37C2F303D4E00E6C6C4 /* InfoPlist.strings in Resources */,
+				F0A3C3852F303D4E00E6C6C4 /* Main_iPhone. in Resources */,
+				F0A3C3882F303D4E00E6C6C4 /* Main_iPad. in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F0A3C38E2F303D4E00E6C6C4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F0A3C39D2F303D4E00E6C6C4 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		F0A3C38F2F303D4E00E6C6C4 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F0A3C3692F303D4E00E6C6C4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F0A3C37E2F303D4E00E6C6C4 /* main.m in Sources */,
+				F0A3C3822F303D4E00E6C6C4 /* AppDelegate.m in Sources */,
+				F0A3C38B2F303D4E00E6C6C4 /* ViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F0A3C38C2F303D4E00E6C6C4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F0A3C3A02F303D4E00E6C6C4 /* SimpliPlayLegacyiOSTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F0A3C3972F303D4E00E6C6C4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F0A3C36C2F303D4E00E6C6C4 /* SimpliPlayLegacyiOS */;
+			targetProxy = F0A3C3962F303D4E00E6C6C4 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		F0A3C37A2F303D4E00E6C6C4 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F0A3C37B2F303D4E00E6C6C4 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		F0A3C3832F303D4E00E6C6C4 /* Main_iPhone. */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F0A3C3842F303D4E00E6C6C4 /* en */,
+			);
+			name = Main_iPhone.;
+			sourceTree = "<group>";
+		};
+		F0A3C3862F303D4E00E6C6C4 /* Main_iPad. */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F0A3C3872F303D4E00E6C6C4 /* en */,
+			);
+			name = Main_iPad.;
+			sourceTree = "<group>";
+		};
+		F0A3C39B2F303D4E00E6C6C4 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F0A3C39C2F303D4E00E6C6C4 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F0A3C3A12F303D4E00E6C6C4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F0A3C3A22F303D4E00E6C6C4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F0A3C3A42F303D4E00E6C6C4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SimpliPlayLegacyiOS/SimpliPlayLegacyiOS-Prefix.pch";
+				INFOPLIST_FILE = "SimpliPlayLegacyiOS/SimpliPlayLegacyiOS-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		F0A3C3A52F303D4E00E6C6C4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SimpliPlayLegacyiOS/SimpliPlayLegacyiOS-Prefix.pch";
+				INFOPLIST_FILE = "SimpliPlayLegacyiOS/SimpliPlayLegacyiOS-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		F0A3C3A72F303D4E00E6C6C4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/SimpliPlayLegacyiOS.app/SimpliPlayLegacyiOS";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SimpliPlayLegacyiOS/SimpliPlayLegacyiOS-Prefix.pch";
+				INFOPLIST_FILE = "SimpliPlayLegacyiOSTests/SimpliPlayLegacyiOSTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		F0A3C3A82F303D4E00E6C6C4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/SimpliPlayLegacyiOS.app/SimpliPlayLegacyiOS";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SimpliPlayLegacyiOS/SimpliPlayLegacyiOS-Prefix.pch";
+				INFOPLIST_FILE = "SimpliPlayLegacyiOSTests/SimpliPlayLegacyiOSTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F0A3C3672F303D4E00E6C6C4 /* Build configuration list for PBXProject "SimpliPlayLegacyiOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F0A3C3A12F303D4E00E6C6C4 /* Debug */,
+				F0A3C3A22F303D4E00E6C6C4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F0A3C3A32F303D4E00E6C6C4 /* Build configuration list for PBXNativeTarget "SimpliPlayLegacyiOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F0A3C3A42F303D4E00E6C6C4 /* Debug */,
+				F0A3C3A52F303D4E00E6C6C4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		F0A3C3A62F303D4E00E6C6C4 /* Build configuration list for PBXNativeTarget "SimpliPlayLegacyiOSTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F0A3C3A72F303D4E00E6C6C4 /* Debug */,
+				F0A3C3A82F303D4E00E6C6C4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F0A3C3642F303D4E00E6C6C4 /* Project object */;
+}
