@@ -1,5 +1,6 @@
 # simpliplay-ios (iOS 4.3-iOS 10.3.3)
 *(formerly known as SimpleiOSPlayer)*
+## NOTE: Jailbroken device with AppSync Unified is REQUIRED to run the IPA!
 
 **If you want a version compatible with versions of iOS above iOS 10.3.3 use the SwiftUI version!**
 **This will build ONLY with older versions of xcodebuild!!! I had to use a macOS Lion VM just to get this to work!!!**
