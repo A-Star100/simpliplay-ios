@@ -25,7 +25,7 @@ struct ContentView: View {
             ZStack {
                 ScrollView {
                     VStack(spacing: 20) {
-                        Text("🎬 SimpliPlay")
+                        Text("SimpliPlay")
                             .font(.largeTitle)
                             .fontWeight(.bold)
                             .padding(.top)
@@ -50,13 +50,13 @@ struct ContentView: View {
                             }
 
                             if let video = videoFileURL {
-                                Text("🎞️ \(video.lastPathComponent)")
+                                Text("\(video.lastPathComponent)")
                                 Button("Play Selected Video") { playLocalVideo(fileURL: video) }
                                     .buttonStyle(PrimaryButtonStyle())
                             }
 
                             if let audio = audioFileURL {
-                                Text("🎵 \(audio.lastPathComponent)")
+                                Text("\(audio.lastPathComponent)")
                             }
                         }
                         .padding(.horizontal)
@@ -70,7 +70,7 @@ struct ContentView: View {
                 if isMenuOpen {
                     VStack(alignment: .leading, spacing: 20) {
                         Button("Official Website") { openURL("https://simpliplay.netlify.app") }
-                        Button("About the Creator") { openURL("https://anirudhsevugan.me") }
+                        Button("About the Creator") { openURL("https://anirudhsevugan.me") } // :D
                         Button("Close Menu") { isMenuOpen = false }
                     }
                     .padding()
@@ -86,7 +86,7 @@ struct ContentView: View {
         }
     }
 
-    // MARK: - Playback
+    // playback
     func playVideo(urlString: String) {
         guard let url = URL(string: urlString) else { return }
         let newPlayer = AVPlayer(url: url)
@@ -123,7 +123,7 @@ struct ContentView: View {
         player.play()
     }
 
-    // MARK: - File Picking
+    // file picking
     func pickVideoFile() {
 #if targetEnvironment(macCatalyst)
         let panel = NSOpenPanel()
@@ -150,7 +150,7 @@ struct ContentView: View {
 #endif
     }
 
-    // MARK: - Open URL
+    // open URL
     func openURL(_ urlString: String) {
 #if targetEnvironment(macCatalyst)
         if let url = URL(string: urlString) {
@@ -163,7 +163,7 @@ struct ContentView: View {
     }
 }
 
-// MARK: - Observer
+// observe player object
 class PlayerObserver: NSObject, ObservableObject {
     private var observation: NSKeyValueObservation?
     private var player: AVPlayer?
@@ -195,7 +195,8 @@ class PlayerObserver: NSObject, ObservableObject {
     }
 }
 
-// MARK: - Button Style
+// style struct for btns
+// it's pretty basic as of now imho
 struct PrimaryButtonStyle: ButtonStyle {
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
