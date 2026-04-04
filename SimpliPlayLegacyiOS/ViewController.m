@@ -14,19 +14,20 @@
     
     alert.alertViewStyle = UIAlertViewStylePlainTextInput;
     [alert show];
-    // NO [alert release] here. ARC handles it.
+    // arc handles memory management
+    // so dont release alert mem with alert release
 }
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
     if (buttonIndex == 1) {
         NSString *urlText = [[alertView textFieldAtIndex:0] text];
         
-        // Safety: URL encoding for strings with spaces
+        // url encoding for strings with spaces
+        // spaces are the greatest enemy
         urlText = [urlText stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
         NSURL *movieURL = [NSURL URLWithString:urlText];
         
         if (movieURL) {
-            // ARC magic: Just assign it. It handles the retain for you.
             self.videoPlayer = [[MPMoviePlayerController alloc] initWithContentURL:movieURL];
             
             self.videoPlayer.view.frame = self.view.bounds;
